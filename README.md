@@ -13,7 +13,6 @@ You can do it like this:
 _engine.Handler.Cache.Remove("someTemplateName"); // Removing template from handler cache
 _engine.Handler.Compiler.Cache.Remove("someTemplateName"); // Removing template from internal RL compiler cache
 ```
-<sup><a href='/tests/RazorLight.Tests/Snippets/Snippets.cs#L18-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-simple' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
