@@ -10,8 +10,8 @@ You can do it like this:
 <!-- snippet: simple -->
 <a id='snippet-simple'></a>
 ```cs
-_engine.Handler.Cache.Remove("someTemplateName"); // Removing template from handler cache
-_engine.Handler.Compiler.Cache.Remove("someTemplateName"); // Removing template from internal RL compiler cache
+engine.Handler.Cache.Remove("someTemplateName"); // Removing template from handler cache
+engine.Handler.Compiler.Cache.Remove("someTemplateName"); // Removing template from internal RL compiler cache
 ```
 <!-- endSnippet -->
 
