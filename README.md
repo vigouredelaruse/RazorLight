@@ -5,13 +5,13 @@ Source File: /README.source.md
 To change this file edit the source file and then run MarkdownSnippets.
 -->
 
-The only difference between RazorLight 2.3.1 and this fork is that now you can delete entries from compiler cache which allows you to update templates. Before you could only delete templates from handler cache which resulted in unexpected behavior when you would still get deleted templates from compiler cache which you hadn't access to. I made a public getter-only property in IRazorTemplateCompiler which allows you to get access to this cache.
+The only difference between RazorLight 2.3.1 and this fork is that now you can delete entries from compiler cache which allows you to update templates. Before you could only delete templates from handler cache which resulted in unexpected behavior when rendering templates with an old key such as getting already removed templates. I made a public getter-only property in IRazorTemplateCompiler which allows you to get access to the compiler cache and delete entries from it which should solve the problem.
 You can do it like this:
 <!-- snippet: simple -->
 <a id='snippet-simple'></a>
 ```cs
-_engine.Handler.Cache.Remove("someTemplateName");
-_engine.Handler.Compiler.Cache.Remove("someTemplateName");
+_engine.Handler.Cache.Remove("someTemplateName"); // Removing template from handler cache
+_engine.Handler.Compiler.Cache.Remove("someTemplateName"); // Removing template from internal RL compiler cache
 ```
 <sup><a href='/tests/RazorLight.Tests/Snippets/Snippets.cs#L18-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-simple' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
